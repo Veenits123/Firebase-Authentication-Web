@@ -51,7 +51,7 @@ def basic():
 			auth.create_user_with_email_and_password(email,password)
 			return render_template('signup.html', s=successful)
 		except:
-			return render_template('index.html', us=unsuccessful)
+			return render_template('signup.html', us=unsuccessful)
 
 	return render_template('signup.html')
 

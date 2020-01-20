@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Icon image here -->
+    <link rel="shortcut icon" href="icon/icons8-drop-of-blood-48.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom Css here -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google fonts here -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:600&display=swap" rel="stylesheet">
+
+    <title>Blood Bank App</title>
+</head>
+
+<body>
+
+    <!-- ======================================starting from here====================================== -->
+
+    <div class="wrapper text-white ">
+
+
+        <!-- ============================Navbar Here========================================================-->
+
+        <nav class="navbar navbar-light bg-danger">
+            <a class="navbar-brand text-white">
+                <h3>Blood Bank<img src="https://img.icons8.com/doodle/48/000000/drop-of-blood.png"></h3>
+            </a>
+
+            <!-- Login and SignUp here -->
+            <div id="authButtons">
+                <button class="btn btn-success lggout" data-toggle="modal" data-target="#LoginModal"
+                    id="lgin">LogIn</button>
+                <button class="btn btn-success lggout" data-toggle="modal" data-target="#SignUpModal"
+                    id="sngup">SignUp</button>
+                <button class="btn btn-success lginn" id="logOut">LogOut</button>
+            </div>
+
+
+            <!-- ======================================MODALS BELOW====================================== -->
+
+
+            <!-- ========================================LoginModal======================================== -->
+
+            <div class="modal fade text-dark" id="LoginModal">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">LogIn Donar<img
+                                    src="https://img.icons8.com/color/48/000000/login-rounded-right.png"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body ">
+                            <div id="alertMessage"></div>
+                            <h1 class="text-center heading display-5">Hey there Donar!</h1>
+                            <form id="LoginForm">
+                                <div class="input-group my-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><img
+                                                src="https://img.icons8.com/flat_round/50/000000/secured-letter.png"></span>
+                                    </div>
+                                    <input type="email" class="form-control" placeholder="Enter Email"
+                                        aria-label="Username" aria-describedby="basic-addon1" id="loginEmail">
+                                </div>
+                                <div class="input-group my-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><img
+                                                src="https://img.icons8.com/color/48/000000/lock-2.png"></span>
+                                    </div>
+                                    <input type="password" class="form-control" placeholder="Enter Password"
+                                        aria-label="Username" aria-describedby="basic-addon1" id="loginPass">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <input type="submit" class="btn btn-primary" value="LogIn">
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- ========================================SignUpModal======================================== -->
+            <div class="modal fade text-dark " id="SignUpModal">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">SignUp Donar<img
+                                    src="https://img.icons8.com/plasticine/48/000000/login-rounded-right.png"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="alertMessage2"></div>
+                            <h1 class="text-center heading display-5">Wanna Donate? SignUp!</h1>
+                            <form id="signupForm">
+                                <div class="input-group my-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><img
+                                                src="https://img.icons8.com/flat_round/50/000000/secured-letter.png"></span>
+                                    </div>
+                                    <input type="email" class="form-control" placeholder="Enter Email"
+                                        aria-label="Username" aria-describedby="basic-addon1" id="signupEmail">
+                                </div>
+                                <div class="input-group my-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><img
+                                                src="https://img.icons8.com/color/48/000000/lock-2.png"></span>
+                                    </div>
+                                    <input type="password" class="form-control" placeholder="Enter Password"
+                                        aria-label="Username" aria-describedby="basic-addon1" id="signupPass">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <input type="submit" class="btn btn-primary" value="Create Account">
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+
+
+
+
+
+    <!-- =========================Firebase Here================================== -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <!-- =====================Firebase Auth Here================================= -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+    <!-- ==================Firebase Firestore Here=============================== -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+
+    <!-- Font Awesome here -->
+    <script src="https://kit.fontawesome.com/ec2f5d14f1.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+<script src="../static/js/app.js"></script>
+
+</html>
